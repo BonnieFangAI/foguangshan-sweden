@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>佛光山瑞典 | Fo Guang Shan Sverige | 人间佛教在北欧</title>
+    <meta name="description" content="瑞典佛光山 — 星云大师人间佛教在北欧的道场。禅修、法会、佛学课程，欢迎您的参与。Fo Guang Shan Sverige Tempel — Humanistisk Buddhism i Norden.">
+    <meta property="og:title" content="佛光山瑞典 | Fo Guang Shan Sverige">
+    <meta property="og:description" content="人间佛教在北欧 — 做好事、说好话、存好心">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://foguangshan.se">
+    <meta name="theme-color" content="#8B6914">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #B8960C;
+            --gold-light: #D4AF37;
+            --gold-glow: #E8C84A;
+            --dark: #1a1207;
+            --dark-warm: #2a1f0e;
+            --cream: #FFF8E7;
+            --cream-soft: #FDF5E0;
+            --brown: #5C4A1E;
+            --brown-light: #8B7335;
+            --text: #3D2E0A;
+            --text-light: #6B5C3A;
+            --red-accent: #8B1A1A;
+            --lotus-pink: #C47A8A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', 'Noto Serif', Georgia, serif;
+            color: var(--text);
+            background: var(--cream);
+            overflow-x: hidden;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 4px;
+            background: rgba(26, 18, 7, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 6px 10px;
+            border-radius: 30px;
+            border: 1px solid rgba(184, 150, 12, 0.3);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: rgba(255, 248, 231, 0.6);
+            cursor: pointer;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            transition: all 0.3s;
+            font-family: 'Noto Serif', serif;
+        }
+
+        .lang-btn:hover {
+            color: var(--gold-light);
+        }
+
+        .lang-btn.active {
+            background: var(--gold);
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: rgba(26, 18, 7, 0.9);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(184, 150, 12, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--gold-light);
+        }
+
+        .nav-brand .dharma-wheel {
+            font-size: 1.6rem;
+        }
+
+        .nav-brand span {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 248, 231, 0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .nav-mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--gold-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(180deg, 
+                    rgba(26, 18, 7, 0.4) 0%, 
+                    rgba(26, 18, 7, 0.2) 40%, 
+                    rgba(26, 18, 7, 0.6) 100%),
+                url('group-photo.jpg') center/cover no-repeat;
+            filter: brightness(0.85);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center top, rgba(184, 150, 12, 0.08) 0%, transparent 60%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 30px;
+        }
+
+        .hero-dharma {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--cream);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            color: var(--gold-glow);
+            font-weight: 400;
+            margin-bottom: 30px;
+            text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+            letter-spacing: 3px;
+        }
+
+        .hero-quote {
+            font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+            color: rgba(255, 248, 231, 0.85);
+            font-style: italic;
+            max-width: 500px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(184, 150, 12, 0.3);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(184, 150, 12, 0.5);
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 248, 231, 0.5);
+            font-size: 0.8rem;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-8px); }
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 30px;
+        }
+
+        .section-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 2;
+            max-width: 700px;
+        }
+
+        /* Humanistic Buddhism Section */
+        .humanistic {
+            background: var(--cream);
+        }
+
+        .humanistic-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 50px;
+            align-items: center;
+        }
+
+        .humanistic-text {
+            line-height: 2;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        .master-card {
+            background: var(--dark-warm);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            color: var(--cream);
+        }
+
+        .master-card h3 {
+            font-size: 1.4rem;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .master-card .years {
+            font-size: 0.85rem;
+            color: rgba(255, 248, 231, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .master-card blockquote {
+            font-style: italic;
+            font-size: 1rem;
+            line-height: 1.9;
+            color: rgba(255, 248, 231, 0.85);
+            border-left: 3px solid var(--gold);
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        /* Three Acts of Goodness */
+        .three-good {
+            background: var(--dark-warm);
+            color: var(--cream);
+        }
+
+        .three-good .section-title {
+            color: var(--gold-light);
+        }
+
+        .three-good .section-label {
+            color: var(--gold);
+        }
+
+        .good-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .good-card {
+            background: rgba(255, 248, 231, 0.05);
+            border: 1px solid rgba(184, 150, 12, 0.15);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .good-card:hover {
+            border-color: var(--gold);
+            background: rgba(255, 248, 231, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .good-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .good-card h3 {
+            font-size: 1.2rem;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .good-card .cn {
+            font-size: 1.6rem;
+            color: var(--gold-glow);
+            margin-bottom: 15px;
+        }
+
+        .good-card p {
+            font-size: 0.9rem;
+            color: rgba(255, 248, 231, 0.7);
+            line-height: 1.8;
+        }
+
+        /* Four Givings */
+        .four-givings {
+            background: var(--cream-soft);
+        }
+
+        .givings-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 50px;
+        }
+
+        .giving-item {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .giving-item .char {
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .giving-item h4 {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .giving-item p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Photo Gallery / Life Section */
+        .life {
+            background: var(--cream);
+        }
+
+        .life-photos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .life-photo {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 4/3;
+        }
+
+        .life-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .life-photo:hover img {
+            transform: scale(1.05);
+        }
+
+        .life-photo .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: var(--cream);
+            font-size: 0.9rem;
+        }
+
+        /* Scriptures */
+        .scriptures {
+            background: var(--dark-warm);
+            color: var(--cream);
+        }
+
+        .scriptures .section-title {
+            color: var(--gold-light);
+        }
+
+        .scripture-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 50px;
+        }
+
+        .scripture-card {
+            background: rgba(255, 248, 231, 0.04);
+            border: 1px solid rgba(184, 150, 12, 0.12);
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .scripture-card:hover {
+            border-color: var(--gold);
+        }
+
+        .scripture-card h4 {
+            color: var(--gold-light);
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .scripture-card .subtitle {
+            color: rgba(255, 248, 231, 0.5);
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+
+        .scripture-card p {
+            color: rgba(255, 248, 231, 0.7);
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+
+        /* Visit Section */
+        .visit {
+            background: var(--cream-soft);
+        }
+
+        .visit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 50px;
+        }
+
+        .visit-info h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .visit-detail {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .visit-detail .icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .visit-detail .text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .visit-detail .text strong {
+            color: var(--text);
+        }
+
+        .visit-map {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--dark);
+        }
+
+        .visit-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: rgba(255, 248, 231, 0.5);
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-size: 1.2rem;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: rgba(255, 248, 231, 0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-copy {
+            font-size: 0.75rem;
+            margin-top: 20px;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-mobile-toggle { display: block; }
+            
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: rgba(26, 18, 7, 0.95);
+                padding: 20px 30px;
+                gap: 16px;
+            }
+
+            .humanistic-grid,
+            .visit-grid,
+            .life-photos {
+                grid-template-columns: 1fr;
+            }
+
+            .good-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .givings-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .scripture-list {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .lang-switcher {
+                top: 74px;
+                right: 10px;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('zh')">中文</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('sv')">SV</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">
+                <span class="dharma-wheel">☸️</span>
+                <span data-zh="佛光山瑞典" data-en="Fo Guang Shan Sverige" data-sv="Fo Guang Shan Sverige">佛光山瑞典</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#humanistic" data-zh="人间佛教" data-en="Humanistic Buddhism" data-sv="Humanistisk Buddhism">人间佛教</a></li>
+                <li><a href="#three-good" data-zh="三好运动" data-en="Three Acts of Goodness" data-sv="Tre Goda Handlingar">三好运动</a></li>
+                <li><a href="#scriptures" data-zh="佛学经典" data-en="Scriptures" data-sv="Skrifter">佛学经典</a></li>
+                <li><a href="#life" data-zh="道场生活" data-en="Temple Life" data-sv="Tempelliv">道场生活</a></li>
+                <li><a href="#visit" data-zh="参访我们" data-en="Visit Us" data-sv="Besök Oss">参访我们</a></li>
+            </ul>
+            <button class="nav-mobile-toggle" onclick="toggleNav()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-dharma">☸️</div>
+            <h1 class="hero-title" data-zh="人间佛教在北欧" data-en="Humanistic Buddhism in the Nordics" data-sv="Humanistisk Buddhism i Norden">人间佛教在北欧</h1>
+            <p class="hero-subtitle" data-zh="瑞典佛光山" data-en="Fo Guang Shan Sweden" data-sv="Fo Guang Shan Sverige">瑞典佛光山</p>
+            <p class="hero-quote" data-zh="「佛说的、人要的、净化的、善美的」—— 星云大师" data-en=""What the Buddha taught, what humanity needs, what purifies, what is virtuous and beautiful." — Venerable Master Hsing Yun" data-sv=""Det Buddha lärde, det mänskligheten behöver, det som renar, det som är dygdigt och vackert." — Mästare Hsing Yun">「佛说的、人要的、净化的、善美的」—— 星云大师</p>
+            <a href="#visit" class="hero-cta" data-zh="欢迎来访 🙏" data-en="Visit Us 🙏" data-sv="Besök Oss 🙏">欢迎来访 🙏</a>
+        </div>
+        <div class="scroll-hint">▼</div>
+    </section>
+
+    <!-- Humanistic Buddhism -->
+    <section class="humanistic" id="humanistic">
+        <div class="section-inner fade-in">
+            <p class="section-label" data-zh="认识人间佛教" data-en="HUMANISTIC BUDDHISM" data-sv="HUMANISTISK BUDDHISM">认识人间佛教</p>
+            <h2 class="section-title" data-zh="佛法不在远方，就在人间" data-en="The Dharma Is Not Far Away — It Is Right Here" data-sv="Dharma är inte långt borta — den finns här">佛法不在远方，就在人间</h2>
+            <div class="humanistic-grid">
+                <div class="humanistic-text" data-zh="人间佛教是佛光山开山祖师星云大师毕生弘扬的核心理念。它不是遥不可及的神秘修行，而是将佛陀的智慧融入日常生活——在工作中修行，在家庭中觉悟，在人际中实践慈悲。<br><br>星云大师提倡「给」的哲学：给人信心、给人欢喜、给人希望、给人方便。这不是高深的学问，而是每个人都能做到的生活态度。<br><br>佛光山自1967年开山以来，已在全球五大洲建立三百余所道场，以文化弘扬佛法，以教育培养人才，以慈善福利社会，以共修净化人心。" data-en="Humanistic Buddhism is the core philosophy championed by Venerable Master Hsing Yun, founder of Fo Guang Shan. It is not mystical practice beyond reach, but the integration of the Buddha's wisdom into everyday life — practicing mindfulness at work, finding awakening within family, and cultivating compassion in all relationships.<br><br>Master Hsing Yun advocated the philosophy of 'giving': giving others confidence, giving others joy, giving others hope, and giving others convenience. This is not abstract philosophy — it is a way of living accessible to everyone.<br><br>Since its founding in 1967, Fo Guang Shan has established over 300 temples across five continents, spreading the Dharma through culture, education, charity, and spiritual practice." data-sv="Humanistisk Buddhism är kärnfilosofin som förespråkades av Mästare Hsing Yun, grundare av Fo Guang Shan. Det handlar inte om mystisk övning bortom räckhåll, utan om att integrera Buddhas visdom i vardagen — att utöva medvetenhet på jobbet, finna uppvaknande i familjen och odla medkänsla i alla relationer.<br><br>Mästare Hsing Yun förespråkade filosofin att 'ge': ge andra förtroende, ge andra glädje, ge andra hopp och ge andra bekvämlighet. Detta är inte abstrakt filosofi — det är ett sätt att leva tillgängligt för alla.<br><br>Sedan grundandet 1967 har Fo Guang Shan etablerat över 300 tempel på fem kontinenter och sprider Dharma genom kultur, utbildning, välgörenhet och andlig praktik.">
+                    人间佛教是佛光山开山祖师星云大师毕生弘扬的核心理念。它不是遥不可及的神秘修行，而是将佛陀的智慧融入日常生活——在工作中修行，在家庭中觉悟，在人际中实践慈悲。<br><br>星云大师提倡「给」的哲学：给人信心、给人欢喜、给人希望、给人方便。这不是高深的学问，而是每个人都能做到的生活态度。<br><br>佛光山自1967年开山以来，已在全球五大洲建立三百余所道场，以文化弘扬佛法，以教育培养人才，以慈善福利社会，以共修净化人心。
+                </div>
+                <div class="master-card">
+                    <h3 data-zh="星云大师" data-en="Venerable Master Hsing Yun" data-sv="Mästare Hsing Yun">星云大师</h3>
+                    <p class="years" data-zh="1927 — 2023 · 佛光山开山祖师" data-en="1927 — 2023 · Founder of Fo Guang Shan" data-sv="1927 — 2023 · Grundare av Fo Guang Shan">1927 — 2023 · 佛光山开山祖师</p>
+                    <blockquote data-zh="「我一生，人家都以为我聚众，其实我是在为社会培养人才。我一生，人家都以为我在建寺庙，其实我是在建设一个让大家都能安心修行的环境。」" data-en=""All my life, people thought I was gathering followers, but actually I was cultivating talent for society. All my life, people thought I was building temples, but actually I was creating an environment where everyone can practice with peace of mind."" data-sv=""Hela mitt liv trodde folk att jag samlade anhängare, men i själva verket odlade jag talanger för samhället. Hela mitt liv trodde folk att jag byggde tempel, men i själva verket skapade jag en miljö där alla kan utöva med sinnesro."">
+                        「我一生，人家都以为我聚众，其实我是在为社会培养人才。我一生，人家都以为我在建寺庙，其实我是在建设一个让大家都能安心修行的环境。」
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Acts of Goodness -->
+    <section class="three-good" id="three-good">
+        <div class="section-inner fade-in">
+            <p class="section-label" data-zh="三好运动" data-en="THREE ACTS OF GOODNESS" data-sv="TRE GODA HANDLINGAR">三好运动</p>
+            <h2 class="section-title" data-zh="做好事 · 说好话 · 存好心" data-en="Do Good Deeds · Speak Good Words · Think Good Thoughts" data-sv="Gör Goda Handlingar · Tala Goda Ord · Tänk Goda Tankar">做好事 · 说好话 · 存好心</h2>
+            <div class="good-cards">
+                <div class="good-card">
+                    <div class="icon">🙌</div>
+                    <div class="cn">做好事</div>
+                    <h3 data-zh="身 — 做好事" data-en="Body — Do Good Deeds" data-sv="Kropp — Gör Goda Handlingar">Body — Do Good Deeds</h3>
+                    <p data-zh="以行动帮助他人，行善布施。无论大小，每一个善举都在改变世界。" data-en="Help others through action and generosity. Every act of kindness, no matter how small, transforms the world." data-sv="Hjälp andra genom handling och generositet. Varje vänlig handling, oavsett hur liten, förändrar världen.">以行动帮助他人，行善布施。无论大小，每一个善举都在改变世界。</p>
+                </div>
+                <div class="good-card">
+                    <div class="icon">💬</div>
+                    <div class="cn">说好话</div>
+                    <h3 data-zh="口 — 说好话" data-en="Speech — Speak Good Words" data-sv="Tal — Tala Goda Ord">Speech — Speak Good Words</h3>
+                    <p data-zh="以温暖的语言鼓励他人，赞美他人。一句好话，能点亮一个人的一天。" data-en="Encourage and praise others with warm words. A kind word can brighten someone's entire day." data-sv="Uppmuntra och berömma andra med varma ord. Ett vänligt ord kan lysa upp någons hela dag.">以温暖的语言鼓励他人，赞美他人。一句好话，能点亮一个人的一天。</p>
+                </div>
+                <div class="good-card">
+                    <div class="icon">🧘</div>
+                    <div class="cn">存好心</div>
+                    <h3 data-zh="意 — 存好心" data-en="Mind — Think Good Thoughts" data-sv="Sinne — Tänk Goda Tankar">Mind — Think Good Thoughts</h3>
+                    <p data-zh="以善念对待一切，心怀感恩。善心是一切善行善言的根源。" data-en="Approach everything with good intentions and gratitude. A kind heart is the source of all good deeds and words." data-sv="Närma dig allt med goda avsikter och tacksamhet. Ett vänligt hjärta är källan till alla goda handlingar och ord.">以善念对待一切，心怀感恩。善心是一切善行善言的根源。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Four Givings -->
+    <section class="four-givings" id="four-givings">
+        <div class="section-inner fade-in">
+            <p class="section-label" data-zh="四给精神" data-en="THE FOUR GIVINGS" data-sv="DE FYRA GIVANDENA">四给精神</p>
+            <h2 class="section-title" data-zh="给人信心 · 给人欢喜 · 给人希望 · 给人方便" data-en="Give Confidence · Give Joy · Give Hope · Give Convenience" data-sv="Ge Förtroende · Ge Glädje · Ge Hopp · Ge Bekvämlighet">给人信心 · 给人欢喜 · 给人希望 · 给人方便</h2>
+            <div class="givings-grid">
+                <div class="giving-item">
+                    <div class="char">信</div>
+                    <h4 data-zh="给人信心" data-en="Give Confidence" data-sv="Ge Förtroende">给人信心</h4>
+                    <p data-zh="让每个人相信自己的力量" data-en="Empower others to believe in themselves" data-sv="Stärk andra att tro på sig själva">让每个人相信自己的力量</p>
+                </div>
+                <div class="giving-item">
+                    <div class="char">喜</div>
+                    <h4 data-zh="给人欢喜" data-en="Give Joy" data-sv="Ge Glädje">给人欢喜</h4>
+                    <p data-zh="以欢喜心面对世界" data-en="Face the world with a joyful heart" data-sv="Möt världen med ett glädjerikt hjärta">以欢喜心面对世界</p>
+                </div>
+                <div class="giving-item">
+                    <div class="char">望</div>
+                    <h4 data-zh="给人希望" data-en="Give Hope" data-sv="Ge Hopp">给人希望</h4>
+                    <p data-zh="为迷茫的人点亮一盏灯" data-en="Light a lamp for those who are lost" data-sv="Tänd en lampa för dem som är vilse">为迷茫的人点亮一盏灯</p>
+                </div>
+                <div class="giving-item">
+                    <div class="char">便</div>
+                    <h4 data-zh="给人方便" data-en="Give Convenience" data-sv="Ge Bekvämlighet">给人方便</h4>
+                    <p data-zh="随时随地助人为乐" data-en="Help others anytime, anywhere" data-sv="Hjälp andra när som helst, var som helst">随时随地助人为乐</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temple Life -->
+    <section class="life" id="life">
+        <div class="section-inner fade-in">
+            <p class="section-label" data-zh="道场生活" data-en="TEMPLE LIFE" data-sv="TEMPELLIV">道场生活</p>
+            <h2 class="section-title" data-zh="在瑞典，遇见佛光" data-en="Encounter the Light of Buddha in Sweden" data-sv="Möt Buddhas Ljus i Sverige">在瑞典，遇见佛光</h2>
+            <p class="section-desc" data-zh="瑞典佛光山位于斯德哥尔摩北部 Rosersberg，是北欧弘扬人间佛教的重要道场。这里定期举办禅修、法会、佛学讲座、节日庆典等活动，欢迎所有人参与体验。" data-en="Fo Guang Shan Sweden is located in Rosersberg, north of Stockholm. As a key center for Humanistic Buddhism in the Nordics, the temple regularly hosts meditation sessions, Dharma services, Buddhist lectures, and festive celebrations. Everyone is welcome." data-sv="Fo Guang Shan Sverige ligger i Rosersberg, norr om Stockholm. Som ett viktigt centrum för humanistisk Buddhism i Norden arrangerar templet regelbundet meditationssessioner, Dharma-ceremonier, buddhistiska föreläsningar och festliga firanden. Alla är välkomna.">瑞典佛光山位于斯德哥尔摩北部 Rosersberg，是北欧弘扬人间佛教的重要道场。这里定期举办禅修、法会、佛学讲座、节日庆典等活动，欢迎所有人参与体验。</p>
+            <div class="life-photos">
+                <div class="life-photo">
+                    <img src="group-photo.jpg" alt="瑞典佛光山合影">
+                    <div class="caption" data-zh="佛光大家庭 — 瑞典佛光山" data-en="The Fo Guang Shan Family — Sweden" data-sv="Fo Guang Shan-familjen — Sverige">佛光大家庭 — 瑞典佛光山</div>
+                </div>
+                <div class="life-photo">
+                    <img src="refuge-ceremony.jpg" alt="皈依典礼">
+                    <div class="caption" data-zh="皈依三宝典礼" data-en="Taking Refuge in the Triple Gem" data-sv="Tillflykt i de Tre Juvelerna">皈依三宝典礼</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scriptures -->
+    <section class="scriptures" id="scriptures">
+        <div class="section-inner fade-in">
+            <p class="section-label" data-zh="佛学经典" data-en="BUDDHIST SCRIPTURES" data-sv="BUDDHISTISKA SKRIFTER">佛学经典</p>
+            <h2 class="section-title" data-zh="经典智慧，照亮人生" data-en="Timeless Wisdom to Illuminate Life" data-sv="Tidlös Visdom som Belyser Livet">经典智慧，照亮人生</h2>
+            <div class="scripture-list">
+                <div class="scripture-card">
+                    <h4 data-zh="《心经》" data-en="Heart Sutra" data-sv="Hjärtsutran">《心经》</h4>
+                    <p class="subtitle" data-zh="般若波罗蜜多心经" data-en="Prajñāpāramitā Hṛdaya" data-sv="Prajñāpāramitā Hṛdaya">般若波罗蜜多心经</p>
+                    <p data-zh="「色不异空，空不异色」—— 260字浓缩般若智慧的精华，是最广为人知的佛教经典。" data-en=""Form is emptiness, emptiness is form" — 260 characters distilling the essence of Prajñā wisdom, the most widely known Buddhist scripture." data-sv=""Form är tomhet, tomhet är form" — 260 tecken som destillerar essensen av Prajñā-visdom, den mest kända buddhistiska skriften.">「色不异空，空不异色」—— 260字浓缩般若智慧的精华，是最广为人知的佛教经典。</p>
+                </div>
+                <div class="scripture-card">
+                    <h4 data-zh="《金刚经》" data-en="Diamond Sutra" data-sv="Diamantsutran">《金刚经》</h4>
+                    <p class="subtitle" data-zh="金刚般若波罗蜜经" data-en="Vajracchedikā Prajñāpāramitā" data-sv="Vajracchedikā Prajñāpāramitā">金刚般若波罗蜜经</p>
+                    <p data-zh="「一切有为法，如梦幻泡影」—— 教导我们放下执着，以金刚般的智慧破除一切烦恼。" data-en=""All conditioned phenomena are like dreams, illusions, bubbles, shadows" — teaching us to let go of attachments with diamond-like wisdom." data-sv=""Alla betingade fenomen är som drömmar, illusioner, bubblor, skuggor" — lär oss att släppa anknytning med diamantlik visdom.">「一切有为法，如梦幻泡影」—— 教导我们放下执着，以金刚般的智慧破除一切烦恼。</p>
+                </div>
+                <div class="scripture-card">
+                    <h4 data-zh="《法华经》" data-en="Lotus Sutra" data-sv="Lotussutran">《法华经》</h4>
+                    <p class="subtitle" data-zh="妙法莲华经" data-en="Saddharmapuṇḍarīka Sūtra" data-sv="Saddharmapuṇḍarīka Sūtra">妙法莲华经</p>
+                    <p data-zh="「一切众生皆能成佛」—— 佛教最重要的经典之一，开显人人皆有佛性的究竟教法。" data-en=""All sentient beings can attain Buddhahood" — one of Buddhism's most important scriptures, revealing that all beings possess Buddha nature." data-sv=""Alla kännande varelser kan uppnå Buddhaskap" — en av buddhismens viktigaste skrifter, som avslöjar att alla varelser besitter Buddhanatur.">「一切众生皆能成佛」—— 佛教最重要的经典之一，开显人人皆有佛性的究竟教法。</p>
+                </div>
+                <div class="scripture-card">
+                    <h4 data-zh="《阿弥陀经》" data-en="Amitābha Sutra" data-sv="Amitābha Sutran">《阿弥陀经》</h4>
+                    <p class="subtitle" data-zh="佛说阿弥陀经" data-en="Sukhāvatīvyūha Sūtra" data-sv="Sukhāvatīvyūha Sūtra">佛说阿弥陀经</p>
+                    <p data-zh="净土法门的根本经典，描绘西方极乐世界的庄严与阿弥陀佛的无量光明。" data-en="The foundational scripture of Pure Land Buddhism, depicting the magnificence of the Western Pure Land and Amitābha Buddha's infinite light." data-sv="Den grundläggande skriften för Rena Landets Buddhism, som skildrar det Västra Rena Landets prakt och Amitābha Buddhas oändliga ljus.">净土法门的根本经典，描绘西方极乐世界的庄严与阿弥陀佛的无量光明。</p>
+                </div>
+                <div class="scripture-card">
+                    <h4 data-zh="《六祖坛经》" data-en="Platform Sutra" data-sv="Plattformssutran">《六祖坛经》</h4>
+                    <p class="subtitle" data-zh="六祖大师法宝坛经" data-en="Liùzǔ Tánjīng" data-sv="Liùzǔ Tánjīng">六祖大师法宝坛经</p>
+                    <p data-zh="「菩提本无树，明镜亦非台」—— 禅宗六祖惠能大师的开示录，直指人心，见性成佛。" data-en=""Bodhi originally has no tree, the mirror has no stand" — the teachings of the Sixth Patriarch Huineng, pointing directly to the mind to see one's true nature." data-sv=""Bodhi har ursprungligen inget träd, spegeln har inget stativ" — lärdomar från den sjätte patriarken Huineng, som pekar direkt mot sinnet för att se sin sanna natur.">「菩提本无树，明镜亦非台」—— 禅宗六祖惠能大师的开示录，直指人心，见性成佛。</p>
+                </div>
+                <div class="scripture-card">
+                    <h4 data-zh="《星云大师全集》" data-en="Complete Works of Master Hsing Yun" data-sv="Mästare Hsing Yuns Samlade Verk">《星云大师全集》</h4>
+                    <p class="subtitle" data-zh="人间佛教的当代开示" data-en="Contemporary Teachings of Humanistic Buddhism" data-sv="Samtida Lärdomar om Humanistisk Buddhism">人间佛教的当代开示</p>
+                    <p data-zh="星云大师一生著作超过两千万字，涵盖佛学、人生、管理、艺术等领域，是学习人间佛教的最佳指南。" data-en="Master Hsing Yun authored over 20 million words throughout his lifetime, covering Buddhism, life philosophy, management, and art — the best guide to Humanistic Buddhism." data-sv="Mästare Hsing Yun författade över 20 miljoner ord under sin livstid, som täcker Buddhism, livsfilosofi, ledarskap och konst — den bästa guiden till humanistisk Buddhism.">星云大师一生著作超过两千万字，涵盖佛学、人生、管理、艺术等领域，是学习人间佛教的最佳指南。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Us -->
+    <section class="visit" id="visit">
+        <div class="section-inner fade-in">
+            <p class="section-label" data-zh="参访我们" data-en="VISIT US" data-sv="BESÖK OSS">参访我们</p>
+            <h2 class="section-title" data-zh="欢迎来到瑞典佛光山" data-en="Welcome to Fo Guang Shan Sweden" data-sv="Välkommen till Fo Guang Shan Sverige">欢迎来到瑞典佛光山</h2>
+            <div class="visit-grid">
+                <div class="visit-info">
+                    <div class="visit-detail">
+                        <span class="icon">📍</span>
+                        <div class="text">
+                            <strong>Blygatan 3, 195 72 Rosersberg</strong><br>
+                            <span data-zh="斯德哥尔摩北部，距市中心约30分钟车程" data-en="North of Stockholm, approx. 30 minutes from city center" data-sv="Norr om Stockholm, ca 30 minuter från centrum">斯德哥尔摩北部，距市中心约30分钟车程</span>
+                        </div>
+                    </div>
+                    <div class="visit-detail">
+                        <span class="icon">🕐</span>
+                        <div class="text">
+                            <strong data-zh="开放时间" data-en="Opening Hours" data-sv="Öppettider">开放时间</strong><br>
+                            <span data-zh="周二至周六：11:00 — 16:00<br>周日：10:00 — 17:00<br>周一休息" data-en="Tue — Sat: 11:00 — 16:00<br>Sun: 10:00 — 17:00<br>Monday: Closed" data-sv="Tis — Lör: 11:00 — 16:00<br>Sön: 10:00 — 17:00<br>Måndag: Stängt">周二至周六：11:00 — 16:00<br>周日：10:00 — 17:00<br>周一休息</span>
+                        </div>
+                    </div>
+                    <div class="visit-detail">
+                        <span class="icon">📞</span>
+                        <div class="text">
+                            <strong data-zh="联系电话" data-en="Phone" data-sv="Telefon">联系电话</strong><br>
+                            <a href="tel:+4685903580" style="color: var(--gold); text-decoration: none;">+46 8 5903 5801</a>
+                        </div>
+                    </div>
+                    <div class="visit-detail">
+                        <span class="icon">🌐</span>
+                        <div class="text">
+                            <strong data-zh="佛光山全球官网" data-en="Fo Guang Shan Global" data-sv="Fo Guang Shan Globalt">佛光山全球官网</strong><br>
+                            <a href="https://www.fgs.org.tw" target="_blank" style="color: var(--gold); text-decoration: none;">www.fgs.org.tw</a>
+                        </div>
+                    </div>
+                    <div class="visit-detail">
+                        <span class="icon">🚌</span>
+                        <div class="text" data-zh="<strong>交通指引</strong><br>从斯德哥尔摩中央车站乘坐通勤火车 (pendeltåg) 至 Rosersberg 站，步行约10分钟即可到达。" data-en="<strong>Getting Here</strong><br>Take the commuter train (pendeltåg) from Stockholm Central Station to Rosersberg station, then walk approximately 10 minutes." data-sv="<strong>Hitta hit</strong><br>Ta pendeltåget från Stockholms centralstation till Rosersberg station, sedan ca 10 minuters promenad.">
+                            <strong>交通指引</strong><br>
+                            从斯德哥尔摩中央车站乘坐通勤火车 (pendeltåg) 至 Rosersberg 站，步行约10分钟即可到达。
+                        </div>
+                    </div>
+                </div>
+                <div class="visit-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2022.5!2d17.8797!3d59.5927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9f0b0b0b0b0b%3A0x0!2sBlygatan+3%2C+195+72+Rosersberg!5e0!3m2!1sen!2sse!4v1" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-brand">☸️ <span data-zh="佛光山瑞典" data-en="Fo Guang Shan Sweden" data-sv="Fo Guang Shan Sverige">佛光山瑞典</span></div>
+        <p data-zh="做好事 · 说好话 · 存好心" data-en="Do Good Deeds · Speak Good Words · Think Good Thoughts" data-sv="Gör Goda Handlingar · Tala Goda Ord · Tänk Goda Tankar" style="color: var(--gold); font-size: 0.85rem;">做好事 · 说好话 · 存好心</p>
+        <div class="footer-links">
+            <a href="https://www.fgs.org.tw" target="_blank" data-zh="佛光山总本山" data-en="Fo Guang Shan HQ" data-sv="Fo Guang Shan HK">佛光山总本山</a>
+            <a href="https://www.ibpssweden.se" target="_blank" data-zh="瑞典佛光山官网" data-en="IBPS Sweden" data-sv="IBPS Sverige">瑞典佛光山官网</a>
+            <a href="https://www.blia.org" target="_blank" data-zh="国际佛光会" data-en="BLIA International" data-sv="BLIA Internationellt">国际佛光会</a>
+        </div>
+        <p class="footer-copy">
+            <span data-zh="© 2026 瑞典佛光山 · Blygatan 3, 195 72 Rosersberg, Sweden" data-en="© 2026 Fo Guang Shan Sweden · Blygatan 3, 195 72 Rosersberg, Sweden" data-sv="© 2026 Fo Guang Shan Sverige · Blygatan 3, 195 72 Rosersberg, Sweden">© 2026 瑞典佛光山 · Blygatan 3, 195 72 Rosersberg, Sweden</span>
+        </p>
+    </footer>
+
+    <script>
+        // Language switching
+        let currentLang = 'zh';
+
+        function setLang(lang) {
+            currentLang = lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === 
+                    (lang === 'zh' ? '中文' : lang).toLowerCase());
+            });
+
+            document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = text;
+                    } else {
+                        el.innerHTML = text;
+                    }
+                }
+            });
+
+            // Update html lang
+            document.documentElement.lang = lang === 'zh' ? 'zh' : lang === 'sv' ? 'sv' : 'en';
+        }
+
+        // Mobile nav toggle
+        function toggleNav() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        // Close mobile nav on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+
+        // Fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Nav hide on scroll down, show on scroll up
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
