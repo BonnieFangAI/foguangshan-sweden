@@ -720,8 +720,7 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="#" class="nav-brand">
-                <span class="dharma-wheel">☸</span>
-                <span data-zh="佛光山瑞典" data-en="Fo Guang Shan Sverige" data-sv="Fo Guang Shan Sverige">佛光山瑞典</span>
+                <img src="fgs-logo.png" alt="佛光山" style="height: 36px; width: auto;">
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#humanistic" data-zh="人间佛教" data-en="Humanistic Buddhism" data-sv="Humanistisk Buddhism">人间佛教</a></li>
@@ -730,6 +729,7 @@
                 <li><a href="#scriptures" data-zh="佛学经典" data-en="Scriptures" data-sv="Skrifter">佛学经典</a></li>
                 <li><a href="#blia" data-zh="佛光会" data-en="BLIA" data-sv="BLIA">佛光会</a></li>
                 <li><a href="#visit" data-zh="参访" data-en="Visit" data-sv="Besök">参访</a></li>
+                <li><a href="#join" data-zh="会员报名" data-en="Join" data-sv="Gå Med" style="color: var(--gold-light);">会员报名</a></li>
             </ul>
             <button class="nav-mobile-toggle" onclick="toggleNav()">☰</button>
         </div>
@@ -1004,9 +1004,38 @@
         </div>
     </section>
 
+    <!-- Member Registration -->
+    <section class="member-reg" id="join" style="background: var(--dark-warm); color: var(--cream); padding: 80px 30px;">
+        <div class="section-inner fade-in" style="text-align: center; max-width: 700px; margin: 0 auto;">
+            <p class="section-label" data-zh="加入我们" data-en="JOIN US" data-sv="GÅ MED">加入我们</p>
+            <h2 class="section-title" style="color: var(--gold-light);" data-zh="成为佛光会会员" data-en="Become a BLIA Member" data-sv="Bli BLIA-medlem">成为佛光会会员</h2>
+            <p style="color: rgba(255,248,231,0.7); line-height: 1.9; margin-bottom: 40px;" data-zh="无论您的背景和信仰，佛光会欢迎每一位追求真善美的朋友。加入我们，一起在北欧实践人间佛教，共建和谐社会。" data-en="Regardless of your background or beliefs, BLIA welcomes everyone who pursues truth, goodness, and beauty. Join us in practicing Humanistic Buddhism in the Nordics." data-sv="Oavsett din bakgrund eller tro, välkomnar BLIA alla som strävar efter sanning, godhet och skönhet. Gå med oss i att utöva humanistisk Buddhism i Norden.">无论您的背景和信仰，佛光会欢迎每一位追求真善美的朋友。加入我们，一起在北欧实践人间佛教，共建和谐社会。</p>
+            <form id="memberForm" style="text-align: left; max-width: 500px; margin: 0 auto;">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; color: var(--gold-light); font-size: 0.85rem; margin-bottom: 6px;" data-zh="姓名" data-en="Name" data-sv="Namn">姓名</label>
+                    <input type="text" name="name" required style="width: 100%; padding: 12px 16px; background: rgba(255,248,231,0.08); border: 1px solid rgba(184,150,12,0.3); border-radius: 6px; color: var(--cream); font-size: 1rem; font-family: inherit;" placeholder="">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; color: var(--gold-light); font-size: 0.85rem; margin-bottom: 6px;" data-zh="电子邮箱" data-en="Email" data-sv="E-post">电子邮箱</label>
+                    <input type="email" name="email" required style="width: 100%; padding: 12px 16px; background: rgba(255,248,231,0.08); border: 1px solid rgba(184,150,12,0.3); border-radius: 6px; color: var(--cream); font-size: 1rem; font-family: inherit;" placeholder="">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; color: var(--gold-light); font-size: 0.85rem; margin-bottom: 6px;" data-zh="电话" data-en="Phone" data-sv="Telefon">电话</label>
+                    <input type="tel" name="phone" style="width: 100%; padding: 12px 16px; background: rgba(255,248,231,0.08); border: 1px solid rgba(184,150,12,0.3); border-radius: 6px; color: var(--cream); font-size: 1rem; font-family: inherit;" placeholder="">
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <label style="display: block; color: var(--gold-light); font-size: 0.85rem; margin-bottom: 6px;" data-zh="留言（选填）" data-en="Message (optional)" data-sv="Meddelande (valfritt)">留言（选填）</label>
+                    <textarea name="message" rows="3" style="width: 100%; padding: 12px 16px; background: rgba(255,248,231,0.08); border: 1px solid rgba(184,150,12,0.3); border-radius: 6px; color: var(--cream); font-size: 1rem; font-family: inherit; resize: vertical;"></textarea>
+                </div>
+                <button type="submit" style="width: 100%; padding: 14px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--dark); font-size: 1rem; font-weight: 600; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; letter-spacing: 1px; transition: all 0.3s;" data-zh="提交报名" data-en="Submit" data-sv="Skicka">提交报名</button>
+            </form>
+            <p id="formSuccess" style="display: none; color: var(--gold-glow); margin-top: 20px; font-size: 1rem;" data-zh="感谢您的报名！我们会尽快与您联系。阿弥陀佛。" data-en="Thank you for your registration! We will contact you soon. Amituofo." data-sv="Tack för din registrering! Vi kontaktar dig snart. Amituofo.">感谢您的报名！我们会尽快与您联系。阿弥陀佛。</p>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-brand"><span data-zh="☸ 佛光山瑞典" data-en="☸ Fo Guang Shan Sweden" data-sv="☸ Fo Guang Shan Sverige">☸ 佛光山瑞典</span></div>
+        <div class="footer-brand"><img src="fgs-logo.png" alt="佛光山" style="height: 40px; width: auto; opacity: 0.8; margin-bottom: 8px;"></div>
         <p data-zh="做好事 · 说好话 · 存好心" data-en="Do Good Deeds · Speak Good Words · Think Good Thoughts" data-sv="Gör Goda Handlingar · Tala Goda Ord · Tänk Goda Tankar" style="color: var(--gold); font-size: 0.85rem;">做好事 · 说好话 · 存好心</p>
         <div class="footer-links">
             <a href="https://www.fgs.org.tw" target="_blank" data-zh="佛光山总本山" data-en="Fo Guang Shan HQ" data-sv="Fo Guang Shan HK">佛光山总本山</a>
@@ -1014,7 +1043,7 @@
             <a href="https://www.blia.org" target="_blank" data-zh="国际佛光会" data-en="BLIA International" data-sv="BLIA Internationellt">国际佛光会</a>
         </div>
         <p class="footer-copy">
-            <span data-zh="© 2026 瑞典佛光山 · Blygatan 3, 195 72 Rosersberg, Sweden" data-en="© 2026 Fo Guang Shan Sweden · Blygatan 3, 195 72 Rosersberg, Sweden" data-sv="© 2026 Fo Guang Shan Sverige · Blygatan 3, 195 72 Rosersberg, Sweden">© 2026 瑞典佛光山 · Blygatan 3, 195 72 Rosersberg, Sweden</span>
+            <span data-zh="© 2026 国际佛光会斯德哥尔摩协会第三分会 · Blygatan 3, 195 72 Rosersberg, Sweden" data-en="© 2026 BLIA Stockholm Chapter · Sub-chapter Three · Blygatan 3, 195 72 Rosersberg, Sweden" data-sv="© 2026 BLIA Stockholm Avdelning · Underavdelning Tre · Blygatan 3, 195 72 Rosersberg, Sweden">© 2026 国际佛光会斯德哥尔摩协会第三分会 · Blygatan 3, 195 72 Rosersberg, Sweden</span>
         </p>
     </footer>
 
@@ -1051,6 +1080,18 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Form handler
+        document.getElementById('memberForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            const data = new FormData(form);
+            const subject = 'BLIA Member Registration / 佛光会会员报名';
+            const body = 'Name: ' + data.get('name') + '\nEmail: ' + data.get('email') + '\nPhone: ' + (data.get('phone') || 'N/A') + '\nMessage: ' + (data.get('message') || 'N/A');
+            window.location.href = 'mailto:info@foguangshan.se?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            form.style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+        });
 
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
