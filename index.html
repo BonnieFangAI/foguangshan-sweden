@@ -307,9 +307,19 @@
         .master-card {
             background: var(--dark-warm);
             border-radius: 12px;
-            padding: 40px;
-            text-align: center;
+            overflow: hidden;
             color: var(--cream);
+        }
+
+        .master-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .master-card-body {
+            padding: 30px;
+            text-align: center;
         }
 
         .master-card h3 {
@@ -468,6 +478,31 @@
             background: linear-gradient(transparent, rgba(0,0,0,0.7));
             color: var(--cream);
             font-size: 0.9rem;
+        }
+
+        /* Lotus Divider */
+        .lotus-divider {
+            background: linear-gradient(180deg, var(--cream) 0%, rgba(253, 245, 224, 0) 20%, rgba(253, 245, 224, 0) 80%, var(--dark-warm) 100%),
+                url('lotus.jpg') center/cover no-repeat;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lotus-divider .lotus-text {
+            background: rgba(26, 18, 7, 0.6);
+            backdrop-filter: blur(5px);
+            padding: 20px 50px;
+            border-radius: 8px;
+            border: 1px solid rgba(184, 150, 12, 0.3);
+        }
+
+        .lotus-divider .lotus-text p {
+            color: var(--gold-glow);
+            font-size: 1.2rem;
+            font-style: italic;
+            letter-spacing: 2px;
         }
 
         /* Scriptures */
@@ -722,11 +757,14 @@
                     人间佛教是佛光山开山祖师星云大师毕生弘扬的核心理念。它不是遥不可及的神秘修行，而是将佛陀的智慧融入日常生活——在工作中修行，在家庭中觉悟，在人际中实践慈悲。<br><br>星云大师提倡「给」的哲学：给人信心、给人欢喜、给人希望、给人方便。这不是高深的学问，而是每个人都能做到的生活态度。<br><br>佛光山自1967年开山以来，已在全球五大洲建立三百余所道场，以文化弘扬佛法，以教育培养人才，以慈善福利社会，以共修净化人心。
                 </div>
                 <div class="master-card">
-                    <h3 data-zh="星云大师" data-en="Venerable Master Hsing Yun" data-sv="Mästare Hsing Yun">星云大师</h3>
-                    <p class="years" data-zh="1927 — 2023 · 佛光山开山祖师" data-en="1927 — 2023 · Founder of Fo Guang Shan" data-sv="1927 — 2023 · Grundare av Fo Guang Shan">1927 — 2023 · 佛光山开山祖师</p>
-                    <blockquote data-zh="「我一生，人家都以为我聚众，其实我是在为社会培养人才。我一生，人家都以为我在建寺庙，其实我是在建设一个让大家都能安心修行的环境。」" data-en=""All my life, people thought I was gathering followers, but actually I was cultivating talent for society. All my life, people thought I was building temples, but actually I was creating an environment where everyone can practice with peace of mind."" data-sv=""Hela mitt liv trodde folk att jag samlade anhängare, men i själva verket odlade jag talanger för samhället. Hela mitt liv trodde folk att jag byggde tempel, men i själva verket skapade jag en miljö där alla kan utöva med sinnesro."">
-                        「我一生，人家都以为我聚众，其实我是在为社会培养人才。我一生，人家都以为我在建寺庙，其实我是在建设一个让大家都能安心修行的环境。」
-                    </blockquote>
+                    <img src="golden-buddha.jpg" alt="Golden Buddha Statue" class="master-card-img">
+                    <div class="master-card-body">
+                        <h3 data-zh="星云大师" data-en="Venerable Master Hsing Yun" data-sv="Mästare Hsing Yun">星云大师</h3>
+                        <p class="years" data-zh="1927 — 2023 · 佛光山开山祖师" data-en="1927 — 2023 · Founder of Fo Guang Shan" data-sv="1927 — 2023 · Grundare av Fo Guang Shan">1927 — 2023 · 佛光山开山祖师</p>
+                        <blockquote data-zh="「我一生，人家都以为我聚众，其实我是在为社会培养人才。我一生，人家都以为我在建寺庙，其实我是在建设一个让大家都能安心修行的环境。」" data-en=""All my life, people thought I was gathering followers, but actually I was cultivating talent for society. All my life, people thought I was building temples, but actually I was creating an environment where everyone can practice with peace of mind."" data-sv=""Hela mitt liv trodde folk att jag samlade anhängare, men i själva verket odlade jag talanger för samhället. Hela mitt liv trodde folk att jag byggde tempel, men i själva verket skapade jag en miljö där alla kan utöva med sinnesro."">
+                            「我一生，人家都以为我聚众，其实我是在为社会培养人才。我一生，人家都以为我在建寺庙，其实我是在建设一个让大家都能安心修行的环境。」
+                        </blockquote>
+                    </div>
                 </div>
             </div>
         </div>
@@ -805,9 +843,24 @@
                     <img src="refuge-ceremony.jpg" alt="皈依典礼">
                     <div class="caption" data-zh="皈依三宝典礼" data-en="Taking Refuge in the Triple Gem" data-sv="Tillflykt i de Tre Juvelerna">皈依三宝典礼</div>
                 </div>
+                <div class="life-photo">
+                    <img src="incense.jpg" alt="佛前供香">
+                    <div class="caption" data-zh="静心供香 — 与佛对话" data-en="Offering Incense — A Dialogue with the Buddha" data-sv="Rökelseoffer — En Dialog med Buddha">静心供香 — 与佛对话</div>
+                </div>
+                <div class="life-photo">
+                    <img src="meditation.jpg" alt="禅修">
+                    <div class="caption" data-zh="禅修体验 — 回归内心的宁静" data-en="Meditation — Returning to Inner Peace" data-sv="Meditation — Återvänd till Inre Frid">禅修体验 — 回归内心的宁静</div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Lotus Divider -->
+    <div class="lotus-divider">
+        <div class="lotus-text">
+            <p data-zh="「心净则国土净」" data-en=""When the mind is pure, the land is pure"" data-sv=""När sinnet är rent, är landet rent"">「心净则国土净」</p>
+        </div>
+    </div>
 
     <!-- Scriptures -->
     <section class="scriptures" id="scriptures">
@@ -900,7 +953,7 @@
                     </div>
                 </div>
                 <div class="visit-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2022.5!2d17.8797!3d59.5927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9f0b0b0b0b0b%3A0x0!2sBlygatan+3%2C+195+72+Rosersberg!5e0!3m2!1sen!2sse!4v1" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2022.5!2d17.8797!3d59.5927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9dc3d29a66a7%3A0x6a0a0a3c40e8c8b0!2sFo+Guang+Shan+Sverige+Tempel!5e0!3m2!1sen!2sse!4v1" allowfullscreen loading="lazy"></iframe>
                 </div>
             </div>
         </div>
