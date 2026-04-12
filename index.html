@@ -555,6 +555,105 @@
             line-height: 1.8;
         }
 
+        .scripture-card .read-link {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 18px;
+            border: 1px solid rgba(184,150,12,0.5);
+            border-radius: 4px;
+            color: var(--gold-light);
+            font-size: 0.8rem;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+
+        .scripture-card .read-link:hover {
+            background: rgba(184,150,12,0.15);
+            border-color: var(--gold);
+        }
+
+        /* Resources Section */
+        .resources {
+            background: var(--dark);
+            color: var(--cream);
+            padding: 100px 0;
+        }
+
+        .resources .section-title { color: var(--gold-light); }
+
+        .resources-intro {
+            color: rgba(255,248,231,0.65);
+            font-size: 1rem;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-top: 20px;
+        }
+
+        .resource-card {
+            background: rgba(255,248,231,0.03);
+            border: 1px solid rgba(184,150,12,0.15);
+            border-radius: 10px;
+            padding: 36px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-card:hover {
+            border-color: var(--gold);
+            background: rgba(184,150,12,0.05);
+        }
+
+        .resource-card .resource-tag {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .resource-card h3 {
+            color: var(--cream);
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .resource-card p {
+            color: rgba(255,248,231,0.6);
+            font-size: 0.87rem;
+            line-height: 1.9;
+            flex: 1;
+        }
+
+        .resource-card .resource-link {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 9px 24px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border-radius: 4px;
+            align-self: flex-start;
+            transition: opacity 0.3s;
+        }
+
+        .resource-card .resource-link:hover { opacity: 0.85; }
+
+        @media (max-width: 768px) {
+            .resource-grid { grid-template-columns: 1fr; }
+        }
+
         /* Visit Section */
         .visit { background: var(--cream-soft); }
 
@@ -727,6 +826,7 @@
                 <li><a href="#three-good" data-zh="三好四给" data-en="Three Acts & Four Givings" data-sv="Tre Goda & Fyra Givanden">三好四给</a></li>
                 <li><a href="#activities" data-zh="法会活动" data-en="Events" data-sv="Evenemang">法会活动</a></li>
                 <li><a href="#scriptures" data-zh="佛学经典" data-en="Scriptures" data-sv="Skrifter">佛学经典</a></li>
+                <li><a href="#resources" data-zh="法宝资源" data-en="Resources" data-sv="Resurser">法宝资源</a></li>
                 <li><a href="#blia" data-zh="佛光会" data-en="BLIA" data-sv="BLIA">佛光会</a></li>
                 <li><a href="#visit" data-zh="参访" data-en="Visit" data-sv="Besök">参访</a></li>
                 <li><a href="#join" data-zh="会员报名" data-en="Join" data-sv="Gå Med" style="color: var(--gold-light);">会员报名</a></li>
@@ -895,31 +995,72 @@
                     <h4 data-zh="《心经》" data-en="Heart Sutra" data-sv="Hjärtsutran">《心经》</h4>
                     <p class="subtitle">Prajñāpāramitā Hṛdaya</p>
                     <p data-zh="「色不异空，空不异色」—— 260字浓缩般若智慧的精华，是最广为人知的佛教经典。" data-en=""Form is emptiness, emptiness is form" — 260 characters distilling the essence of Prajñā wisdom, the most widely known Buddhist scripture." data-sv=""Form är tomhet, tomhet är form" — 260 tecken som destillerar essensen av Prajñā-visdom, den mest kända buddhistiska skriften.">「色不异空，空不异色」—— 260字浓缩般若智慧的精华，是最广为人知的佛教经典。</p>
+                    <a href="https://tripitaka.cbeta.org/T08n0251" target="_blank" rel="noopener" class="read-link" data-zh="在线阅读" data-en="Read Online" data-sv="Läs Online">在线阅读</a>
                 </div>
                 <div class="scripture-card">
                     <h4 data-zh="《金刚经》" data-en="Diamond Sutra" data-sv="Diamantsutran">《金刚经》</h4>
                     <p class="subtitle">Vajracchedikā Prajñāpāramitā</p>
                     <p data-zh="「一切有为法，如梦幻泡影」—— 教导我们放下执着，以金刚般的智慧破除一切烦恼。" data-en=""All conditioned phenomena are like dreams, illusions, bubbles, shadows" — teaching us to let go of attachments with diamond-like wisdom." data-sv=""Alla betingade fenomen är som drömmar, illusioner, bubblor, skuggor" — lär oss att släppa anknytning med diamantlik visdom.">「一切有为法，如梦幻泡影」—— 教导我们放下执着，以金刚般的智慧破除一切烦恼。</p>
+                    <a href="https://tripitaka.cbeta.org/T08n0235" target="_blank" rel="noopener" class="read-link" data-zh="在线阅读" data-en="Read Online" data-sv="Läs Online">在线阅读</a>
                 </div>
                 <div class="scripture-card">
                     <h4 data-zh="《法华经》" data-en="Lotus Sutra" data-sv="Lotussutran">《法华经》</h4>
                     <p class="subtitle">Saddharmapuṇḍarīka Sūtra</p>
                     <p data-zh="「一切众生皆能成佛」—— 佛教最重要的经典之一，开显人人皆有佛性的究竟教法。" data-en=""All sentient beings can attain Buddhahood" — one of Buddhism's most important scriptures, revealing that all beings possess Buddha nature." data-sv=""Alla kännande varelser kan uppnå Buddhaskap" — en av buddhismens viktigaste skrifter, som avslöjar att alla varelser besitter Buddhanatur.">「一切众生皆能成佛」—— 佛教最重要的经典之一，开显人人皆有佛性的究竟教法。</p>
+                    <a href="https://tripitaka.cbeta.org/T09n0262" target="_blank" rel="noopener" class="read-link" data-zh="在线阅读" data-en="Read Online" data-sv="Läs Online">在线阅读</a>
                 </div>
                 <div class="scripture-card">
                     <h4 data-zh="《阿弥陀经》" data-en="Amitābha Sutra" data-sv="Amitābha Sutran">《阿弥陀经》</h4>
                     <p class="subtitle">Sukhāvatīvyūha Sūtra</p>
                     <p data-zh="净土法门的根本经典，描绘西方极乐世界的庄严与阿弥陀佛的无量光明。" data-en="The foundational scripture of Pure Land Buddhism, depicting the magnificence of the Western Pure Land and Amitābha Buddha's infinite light." data-sv="Den grundläggande skriften för Rena Landets Buddhism, som skildrar det Västra Rena Landets prakt och Amitābha Buddhas oändliga ljus.">净土法门的根本经典，描绘西方极乐世界的庄严与阿弥陀佛的无量光明。</p>
+                    <a href="https://tripitaka.cbeta.org/T12n0366" target="_blank" rel="noopener" class="read-link" data-zh="在线阅读" data-en="Read Online" data-sv="Läs Online">在线阅读</a>
                 </div>
                 <div class="scripture-card">
                     <h4 data-zh="《六祖坛经》" data-en="Platform Sutra" data-sv="Plattformssutran">《六祖坛经》</h4>
                     <p class="subtitle">Liùzǔ Tánjīng</p>
                     <p data-zh="「菩提本无树，明镜亦非台」—— 禅宗六祖惠能大师的开示录，直指人心，见性成佛。" data-en=""Bodhi originally has no tree, the mirror has no stand" — the teachings of the Sixth Patriarch Huineng, pointing directly to the mind." data-sv=""Bodhi har ursprungligen inget träd, spegeln har inget stativ" — lärdomar från den sjätte patriarken Huineng, som pekar direkt mot sinnet.">「菩提本无树，明镜亦非台」—— 禅宗六祖惠能大师的开示录，直指人心，见性成佛。</p>
+                    <a href="https://tripitaka.cbeta.org/T48n2008" target="_blank" rel="noopener" class="read-link" data-zh="在线阅读" data-en="Read Online" data-sv="Läs Online">在线阅读</a>
                 </div>
                 <div class="scripture-card">
                     <h4 data-zh="《星云大师全集》" data-en="Complete Works of Master Hsing Yun" data-sv="Mästare Hsing Yuns Samlade Verk">《星云大师全集》</h4>
                     <p class="subtitle" data-zh="人间佛教的当代开示" data-en="Contemporary Teachings of Humanistic Buddhism" data-sv="Samtida Lärdomar om Humanistisk Buddhism">人间佛教的当代开示</p>
                     <p data-zh="星云大师一生著作超过两千万字，涵盖佛学、人生、管理、艺术等领域，是学习人间佛教的最佳指南。" data-en="Master Hsing Yun authored over 20 million words, covering Buddhism, life philosophy, management, and art — the best guide to Humanistic Buddhism." data-sv="Mästare Hsing Yun författade över 20 miljoner ord, som täcker Buddhism, livsfilosofi, ledarskap och konst — den bästa guiden till humanistisk Buddhism.">星云大师一生著作超过两千万字，涵盖佛学、人生、管理、艺术等领域，是学习人间佛教的最佳指南。</p>
+                    <a href="https://books.masterhsingyun.org/" target="_blank" rel="noopener" class="read-link" data-zh="在线阅读" data-en="Read Online" data-sv="Läs Online">在线阅读</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dharma Resources -->
+    <section class="resources" id="resources">
+        <div class="section-inner fade-in">
+            <p class="section-label" data-zh="法宝资源库" data-en="DHARMA RESOURCE LIBRARY" data-sv="DHARMANS RESURSBIBLIOTEK">法宝资源库</p>
+            <h2 class="section-title" data-zh="正版经典，免费共享" data-en="Authentic Scriptures, Freely Shared" data-sv="Autentiska Skrifter, Fritt Delade">正版经典，免费共享</h2>
+            <p class="resources-intro" data-zh="以下资源均来自权威佛教机构，经正式授权或免费开放。愿法宝广传，利益一切有情。" data-en="The following resources are from authoritative Buddhist institutions, officially licensed or freely available. May the Dharma spread widely and benefit all sentient beings." data-sv="Följande resurser är från auktoritativa buddhistiska institutioner, officiellt licensierade eller fritt tillgängliga. Må Dharma spridas och gynna alla kännande varelser.">以下资源均来自权威佛教机构，经正式授权或免费开放。愿法宝广传，利益一切有情。</p>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <p class="resource-tag" data-zh="佛光山官方" data-en="FO GUANG SHAN OFFICIAL" data-sv="FO GUANG SHAN OFFICIELL">佛光山官方</p>
+                    <h3 data-zh="佛光山電子大藏經" data-en="Fo Guang Shan Electronic Tripitaka" data-sv="Fo Guang Shan Elektronisk Tripitaka">佛光山電子大藏經</h3>
+                    <p data-zh="佛光山编纂，收录阿含藏、禅藏、般若藏、净土藏、法华藏等，附名相释义与经题解说，是目前最完整的佛光山官方电子经典数据库。" data-en="Compiled by Fo Guang Shan, covering Āgama, Chan, Prajñā, Pure Land, Lotus and more sutras, with annotations and commentary. The most complete official Fo Guang Shan digital scripture database." data-sv="Sammanställd av Fo Guang Shan, med Āgama, Chan, Prajñā, Rena Landet, Lotus och fler sutror, med annotationer och kommentarer. Den mest kompletta officiella digitala skriftdatabasen.">佛光山编纂，收录阿含藏、禅藏、般若藏、净土藏、法华藏等，附名相释义与经题解说，是目前最完整的佛光山官方电子经典数据库。</p>
+                    <a href="https://etext.fgs.org.tw/" target="_blank" rel="noopener" class="resource-link" data-zh="进入资源库" data-en="Open Library" data-sv="Öppna Bibliotek">进入资源库</a>
+                </div>
+                <div class="resource-card">
+                    <p class="resource-tag" data-zh="佛光山官方" data-en="FO GUANG SHAN OFFICIAL" data-sv="FO GUANG SHAN OFFICIELL">佛光山官方</p>
+                    <h3 data-zh="星云大师全集" data-en="Complete Works of Master Hsing Yun" data-sv="Mästare Hsing Yuns Samlade Verk">星云大师全集</h3>
+                    <p data-zh="395册，4000余万字，十二大类，涵盖经义、论丛、演讲、日记、传记等。星云大师毕生著作，免费在线阅读，官方正式授权。" data-en="395 volumes, 40+ million words, twelve categories including sutras, essays, lectures, diaries, and biography. Master Hsing Yun's life works, freely available online with official authorization." data-sv="395 volymer, 40+ miljoner ord, tolv kategorier inklusive sutror, essäer, föreläsningar, dagböcker och biografi. Mästare Hsing Yuns livsverk, fritt tillgängliga online med officiellt tillstånd.">395册，4000余万字，十二大类，涵盖经义、论丛、演讲、日记、传记等。星云大师毕生著作，免费在线阅读，官方正式授权。</p>
+                    <a href="https://books.masterhsingyun.org/" target="_blank" rel="noopener" class="resource-link" data-zh="在线阅读" data-en="Read Online" data-sv="Läs Online">在线阅读</a>
+                </div>
+                <div class="resource-card">
+                    <p class="resource-tag" data-zh="汉文大藏经" data-en="CHINESE TRIPITAKA" data-sv="KINESISK TRIPITAKA">汉文大藏经</p>
+                    <h3 data-zh="CBETA 中华电子佛典" data-en="CBETA Chinese Buddhist Texts" data-sv="CBETA Kinesiska Buddhistiska Texter">CBETA 中华电子佛典</h3>
+                    <p data-zh="收录大正新脩大藏经、卍续藏等权威汉译佛典，经正式授权，可非营利免费使用，提供在线阅读、EPUB/PDF下载。" data-en="Contains the Taishō Tripiṭaka, Continued Canon, and other authoritative Chinese Buddhist texts. Officially licensed for free non-profit use, with online reading and EPUB/PDF downloads." data-sv="Innehåller Taishō Tripiṭaka, Fortsatt Kanon och andra auktoritativa kinesiska buddhistiska texter. Officiellt licensierade för gratis icke-kommersiell användning, med onlineläsning och EPUB/PDF-nedladdningar.">收录大正新脩大藏经、卍续藏等权威汉译佛典，经正式授权，可非营利免费使用，提供在线阅读、EPUB/PDF下载。</p>
+                    <a href="https://cbeta.org/" target="_blank" rel="noopener" class="resource-link" data-zh="浏览经典" data-en="Browse Texts" data-sv="Bläddra Texter">浏览经典</a>
+                </div>
+                <div class="resource-card">
+                    <p class="resource-tag" data-zh="英文巴利文" data-en="ENGLISH &amp; PALI" data-sv="ENGELSKA &amp; PALI">英文巴利文</p>
+                    <h3 data-zh="Access to Insight" data-en="Access to Insight" data-sv="Access to Insight">Access to Insight</h3>
+                    <p data-zh="收录上座部佛教英文经典，包括法句经、相应部、中部等。部分经典采用创作共用授权，可免费下载使用，是学习英文巴利文经典的最佳入口。" data-en="Theravāda Buddhist scriptures in English, including the Dhammapada, Saṃyutta Nikāya, Majjhima Nikāya and more. Some texts use Creative Commons licensing — the best gateway to Pali Canon in English." data-sv="Theravāda-buddhistiska skrifter på engelska, inklusive Dhammapada, Saṃyutta Nikāya, Majjhima Nikāya med mera. Vissa texter använder Creative Commons-licensiering — den bästa ingången till Pali-kanon på engelska.">收录上座部佛教英文经典，包括法句经、相应部、中部等。部分经典采用创作共用授权，可免费下载使用，是学习英文巴利文经典的最佳入口。</p>
+                    <a href="https://www.accesstoinsight.org/" target="_blank" rel="noopener" class="resource-link" data-zh="浏览经典" data-en="Browse Texts" data-sv="Bläddra Texter">浏览经典</a>
                 </div>
             </div>
         </div>
@@ -1101,3 +1242,4 @@
     </script>
 </body>
 </html>
+
