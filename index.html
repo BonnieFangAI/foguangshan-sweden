@@ -858,6 +858,7 @@
                 <li><a href="#about" data-zh="关于法灯" data-en="About" data-sv="Om">关于法灯</a></li>
                 <li><a href="#scriptures" data-zh="佛学经典" data-en="Scriptures" data-sv="Skrifter">佛学经典</a></li>
                 <li><a href="#resources" data-zh="法宝资源" data-en="Resources" data-sv="Resurser">法宝资源</a></li>
+                <li><a href="#connect" data-zh="结缘" data-en="Connect" data-sv="Kontakt" style="color: var(--gold-light);">结缘</a></li>
             </ul>
             <button class="nav-mobile-toggle" onclick="toggleNav()">☰</button>
         </div>
@@ -1035,6 +1036,34 @@
         </div>
     </section>
 
+    <!-- Connect -->
+    <section id="connect" style="background: var(--dark-warm); padding: 100px 30px;">
+        <div class="section-inner fade-in" style="max-width: 680px; text-align: center;">
+            <p class="section-label" data-zh="结缘法灯" data-en="CONNECT" data-sv="KONTAKT">结缘法灯</p>
+            <h2 class="section-title" data-zh="有缘相聚，共学共修" data-en="Connected by the Dharma" data-sv="Förenade av Dharma">有缘相聚，共学共修</h2>
+            <div class="lotus-divider"><span>🪷</span></div>
+            <p style="color: var(--text-light); line-height: 2; font-size: 1rem; margin-bottom: 48px;" data-zh="若您在北欧学习佛法，希望交流经典心得，或有任何问题与感悟，欢迎来信与海多结缘。每一封信都会认真阅读与回复。" data-en="If you are studying the Dharma in the Nordics and wish to share reflections on the scriptures, or have any questions, you are warmly welcome to write. Every message will be read and replied to with care." data-sv="Om du studerar Dharma i Norden och vill dela tankar om skrifterna, eller har frågor, är du välkommen att skriva. Varje meddelande läses och besvaras med omsorg.">若您在北欧学习佛法，希望交流经典心得，或有任何问题与感悟，欢迎来信与海多结缘。每一封信都会认真阅读与回复。</p>
+            <form id="connectForm" style="display: flex; flex-direction: column; gap: 16px; text-align: left;">
+                <input type="text" name="name" required placeholder="您的法名或姓名 / Your name"
+                    style="background: rgba(255,255,255,0.05); border: 1px solid rgba(201,162,39,0.3); border-radius: 6px; padding: 14px 18px; color: var(--cream); font-family: 'Noto Serif SC', serif; font-size: 0.95rem; outline: none; transition: border-color 0.3s;"
+                    onfocus="this.style.borderColor='rgba(201,162,39,0.7)'" onblur="this.style.borderColor='rgba(201,162,39,0.3)'">
+                <input type="email" name="email" required placeholder="您的邮箱 / Your email"
+                    style="background: rgba(255,255,255,0.05); border: 1px solid rgba(201,162,39,0.3); border-radius: 6px; padding: 14px 18px; color: var(--cream); font-family: 'Noto Serif SC', serif; font-size: 0.95rem; outline: none; transition: border-color 0.3s;"
+                    onfocus="this.style.borderColor='rgba(201,162,39,0.7)'" onblur="this.style.borderColor='rgba(201,162,39,0.3)'">
+                <textarea name="message" rows="5" required placeholder="您的心得或想法… / Your reflection or message…"
+                    style="background: rgba(255,255,255,0.05); border: 1px solid rgba(201,162,39,0.3); border-radius: 6px; padding: 14px 18px; color: var(--cream); font-family: 'Noto Serif SC', serif; font-size: 0.95rem; outline: none; resize: vertical; transition: border-color 0.3s;"
+                    onfocus="this.style.borderColor='rgba(201,162,39,0.7)'" onblur="this.style.borderColor='rgba(201,162,39,0.3)'"></textarea>
+                <button type="submit" style="align-self: center; padding: 14px 48px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--dark); font-family: 'Noto Serif SC', serif; font-size: 1rem; font-weight: 600; border: none; border-radius: 4px; cursor: pointer; letter-spacing: 1px; transition: all 0.3s; box-shadow: 0 4px 20px rgba(184,150,12,0.3);"
+                    onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 30px rgba(184,150,12,0.5)'"
+                    onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(184,150,12,0.3)'"
+                    data-zh="寄出法缘" data-en="Send Message" data-sv="Skicka Meddelande">寄出法缘</button>
+            </form>
+            <div id="connectSuccess" style="display:none; color: var(--gold-light); font-size: 1.05rem; line-height: 2; margin-top: 20px;">
+                <p data-zh="感恩您的来信。阿弥陀佛。🙏" data-en="Thank you for your message. Amituofo. 🙏" data-sv="Tack för ditt meddelande. Amituofo. 🙏">感恩您的来信。阿弥陀佛。🙏</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <img src="logo.jpg" alt="海多·法灯" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; box-shadow: 0 0 30px rgba(210,155,20,0.35); opacity: 0.9;">
@@ -1084,6 +1113,16 @@
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+
+        document.getElementById('connectForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = new FormData(this);
+            const subject = '结缘法灯 / Dharma Light Connection';
+            const body = '姓名 / Name: ' + data.get('name') + '\n邮箱 / Email: ' + data.get('email') + '\n\n留言 / Message:\n' + data.get('message');
+            window.location.href = 'mailto:info@foguangshan.se?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            this.style.display = 'none';
+            document.getElementById('connectSuccess').style.display = 'block';
+        });
 
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
