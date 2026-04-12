@@ -150,13 +150,15 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at 50% 30%, #152A4E 0%, #0A1628 55%, #06101C 100%);
+            background: radial-gradient(ellipse at 50% 20%, #1C2A10 0%, #0F1E38 30%, #080F1E 70%, #04090F 100%);
         }
 
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at center top, rgba(184,150,12,0.08) 0%, transparent 60%);
+            background:
+                radial-gradient(ellipse at 50% 5%, rgba(210,160,20,0.22) 0%, rgba(160,110,10,0.10) 35%, transparent 65%),
+                radial-gradient(ellipse at 50% 50%, rgba(8,60,40,0.08) 0%, transparent 70%);
         }
 
         .hero-content {
@@ -238,6 +240,27 @@
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 12px;
+        }
+
+        .lotus-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 16px 0 28px;
+            color: var(--gold);
+        }
+
+        .lotus-divider::before,
+        .lotus-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(201,162,39,0.45), transparent);
+        }
+
+        .lotus-divider span {
+            font-size: 1.1rem;
+            opacity: 0.8;
         }
 
         .section-title {
@@ -823,7 +846,7 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="#" class="nav-brand">
-                <img src="logo.jpg" alt="海多·法灯" style="height: 42px; width: 42px; border-radius: 50%; object-fit: cover;">
+                <img src="logo.jpg" alt="海多·法灯" style="height: 44px; width: 44px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 12px rgba(210,155,20,0.5);">
                 <span data-zh="海多·法灯" data-en="Dharma Light" data-sv="Dharmans Ljus">海多·法灯</span>
             </a>
             <ul class="nav-links" id="navLinks">
@@ -845,7 +868,7 @@
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <img src="logo.jpg" alt="海多·法灯" style="width: min(260px, 60vw); height: auto; border-radius: 50%; margin-bottom: 30px; box-shadow: 0 0 60px rgba(212,175,55,0.25);">
+            <img src="logo.jpg" alt="海多·法灯" style="width: min(280px, 65vw); height: auto; border-radius: 50%; margin-bottom: 30px; box-shadow: 0 0 80px rgba(210,155,20,0.45), 0 0 160px rgba(180,120,10,0.20), 0 0 8px rgba(255,220,80,0.35);">
             <h1 class="hero-title" data-zh="海多·法灯" data-en="Dharma Light" data-sv="Dharmans Ljus">海多·法灯</h1>
             <p class="hero-subtitle" data-zh="人间佛教在北欧" data-en="Humanistic Buddhism in the Nordics" data-sv="Humanistisk Buddhism i Norden">人间佛教在北欧</p>
             <p class="hero-quote" data-zh="「给」是人间佛教最核心的精神 —— 给人信心、给人欢喜、给人希望、给人方便" data-en=""Giving is the heart of Humanistic Buddhism — give confidence, give joy, give hope, give convenience."" data-sv=""Att ge är kärnan i humanistisk Buddhism — ge förtroende, glädje, hopp och bekvämlighet."">「给」是人间佛教最核心的精神 —— 给人信心、给人欢喜、给人希望、给人方便</p>
@@ -859,6 +882,7 @@
         <div class="section-inner fade-in">
             <p class="section-label" data-zh="佛学理念" data-en="BUDDHIST PHILOSOPHY" data-sv="BUDDHISTISK FILOSOFI">佛学理念</p>
             <h2 class="section-title" data-zh="佛法不在远方，就在人间" data-en="The Dharma Is Not Far Away — It Is Right Here" data-sv="Dharma är inte långt borta — den finns här">佛法不在远方，就在人间</h2>
+            <div class="lotus-divider"><span>🪷</span></div>
             <div style="max-width: 820px; margin: 40px auto 0; color: var(--text-light); line-height: 2.2; font-size: 1rem;">
                 <p data-zh="人间佛教，是将佛陀的智慧融入日常生活的修行方式。它不是遥不可及的神秘修行，而是在工作中实践正念、在家庭中培育慈悲、在人际中传播善意。" data-en="Humanistic Buddhism is the practice of integrating the Buddha's wisdom into everyday life. Not a remote mystical tradition, but mindfulness at work, compassion in family, and goodwill in every relationship." data-sv="Humanistisk Buddhism är praktiken att integrera Buddhas visdom i vardagen. Inte en avlägsen mystisk tradition, utan medvetenhet på jobbet, medkänsla i familjen och välvilja i varje relation.">人间佛教，是将佛陀的智慧融入日常生活的修行方式。它不是遥不可及的神秘修行，而是在工作中实践正念、在家庭中培育慈悲、在人际中传播善意。</p>
                 <br>
@@ -872,6 +896,7 @@
         <div class="section-inner fade-in">
             <p class="section-label" data-zh="三好运动" data-en="THREE ACTS OF GOODNESS" data-sv="TRE GODA HANDLINGAR">三好运动</p>
             <h2 class="section-title" data-zh="做好事 · 说好话 · 存好心" data-en="Do Good Deeds · Speak Good Words · Think Good Thoughts" data-sv="Gör Goda Handlingar · Tala Goda Ord · Tänk Goda Tankar">做好事 · 说好话 · 存好心</h2>
+            <div class="lotus-divider"><span>🪷</span></div>
             <div class="good-cards">
                 <div class="good-card">
                     <div class="cn">做好事</div>
@@ -897,6 +922,7 @@
         <div class="section-inner fade-in">
             <p class="section-label" data-zh="四给精神" data-en="THE FOUR GIVINGS" data-sv="DE FYRA GIVANDENA">四给精神</p>
             <h2 class="section-title" data-zh="给人信心 · 给人欢喜 · 给人希望 · 给人方便" data-en="Give Confidence · Give Joy · Give Hope · Give Convenience" data-sv="Ge Förtroende · Ge Glädje · Ge Hopp · Ge Bekvämlighet">给人信心 · 给人欢喜 · 给人希望 · 给人方便</h2>
+            <div class="lotus-divider"><span>🪷</span></div>
             <div class="givings-grid">
                 <div class="giving-item">
                     <div class="char">信</div>
@@ -1090,7 +1116,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <img src="logo.jpg" alt="海多·法灯" style="width: 72px; height: 72px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; opacity: 0.85;">
+        <img src="logo.jpg" alt="海多·法灯" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; box-shadow: 0 0 30px rgba(210,155,20,0.35); opacity: 0.9;">
         <p style="font-family: 'Noto Serif SC', serif; color: var(--gold-light); font-size: 1.3rem; letter-spacing: 3px; margin-bottom: 10px;">海多·法灯</p>
         <p data-zh="做好事 · 说好话 · 存好心" data-en="Do Good Deeds · Speak Good Words · Think Good Thoughts" data-sv="Gör Goda Handlingar · Tala Goda Ord · Tänk Goda Tankar" style="color: var(--gold); font-size: 0.85rem;">做好事 · 说好话 · 存好心</p>
         <div class="footer-links" style="margin-top: 20px;">
